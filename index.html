@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
   <title>Salary Calculator</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
+  <script defer src="client.js"></script>
 </head>
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
   </header>
+
   <main>
     <h2>Add Employee</h2>
+    <!-- Form to add new employees -->
+    <form id="employee-form" onsubmit="submitForm(event)">
+      <!-- Input fields for employee information -->
+      First name: <input type="text" id="fnameInput" placeholder="First Name" required
+      data-testid="firstNameInput"><br><br>
+      Last name: <input type="text" id="lnameInput" placeholder="Last Name" required
+      data-testid="lastNameInput"><br><br>
+      ID Number: <input type="text" id="idInput" placeholder="ID Number" required
+      data-testid="idInput"><br><br>
+      Job Title: <input type="text" id="titleInput" placeholder="Job Title" required
+      data-testid="titleInput"><br><br>
+      Annual Salary: <input type="text" id="salaryInput" placeholder="Annual Salary" required
+      data-testid="annualSalaryInput"><br><br>
+
+
+      <!-- Submit button for the form -->
+      <button type="submit" data-testid="submitButton">Submit</button>
+    </form>
+
     <h2>Employees</h2>
+    <!-- Table to display employees -->
+    <table id="employee-table">
+      <thead>
+        <!-- Table header row -->
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID Number</th>
+          <th>Job Title</th>
+          <th>Annual Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="employee-rows">
+        <!-- Employee rows will be dynamically added here -->
+      </tbody>
+      <tfoot id="footer">
+        <!-- Table footer row for total monthly cost -->
+        <tr>
+          <td>Total Monthly Cost</td>
+
+          <td id="total-monthly-cost">$0.00</td>
+        </tr>
+      </tfoot>
+    </table>
   </main>
+  
   <footer>
-    <p>Total Monthly</p>
+  
   </footer>
+
 </body>
+
 </html>
